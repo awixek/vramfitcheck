@@ -1,4 +1,4 @@
-files architecture 👇🏻                        ```text
+files architecture 👇🏻                       ```text
 hf-vram-estimator/
 │
 ├── apps/
