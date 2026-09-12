@@ -1,7 +1,7 @@
+```text
 hf-vram-estimator/
 │
 ├── apps/
-│   │
 │   ├── extension/
 │   │   ├── icons/
 │   │   │   └── icon128.png
@@ -24,15 +24,12 @@ hf-vram-estimator/
 │       ├── app/
 │       │   ├── compare/
 │       │   │   └── page.tsx
-│       │   │
 │       │   ├── gpu/
 │       │   │   └── [id]/
 │       │   │       └── page.tsx
-│       │   │
 │       │   ├── model/
 │       │   │   └── [...modelId]/
 │       │   │       └── page.tsx
-│       │   │
 │       │   ├── globals.css
 │       │   ├── layout.tsx
 │       │   └── page.tsx
@@ -52,47 +49,38 @@ hf-vram-estimator/
 │       └── README.md
 │
 ├── services/
-│   │
 │   └── api/
 │       ├── src/
 │       │   ├── hf/
 │       │   │   └── client.ts
-│       │   │
 │       │   ├── middleware/
 │       │   │   ├── errors.ts
 │       │   │   └── rate-limit.ts
-│       │   │
 │       │   ├── routes/
 │       │   │   ├── calculate.ts
 │       │   │   ├── gpus.ts
 │       │   │   ├── health.ts
 │       │   │   └── models.ts
-│       │   │
 │       │   ├── services/
 │       │   │   └── model-service.ts
-│       │   │
 │       │   ├── config.ts
 │       │   └── server.ts
 │       │
 │       ├── tests/
 │       │   └── rate-limit.test.mjs
-│       │
 │       ├── .env.example
 │       ├── package.json
 │       ├── tsconfig.json
 │       └── README.md
 │
 ├── packages/
-│   │
 │   ├── gpu-data/
 │   │   ├── src/
 │   │   │   ├── catalog.ts
 │   │   │   ├── index.ts
 │   │   │   └── types.ts
-│   │   │
 │   │   ├── tests/
 │   │   │   └── catalog.test.ts
-│   │   │
 │   │   ├── package.json
 │   │   ├── tsconfig.json
 │   │   └── README.md
@@ -103,10 +91,8 @@ hf-vram-estimator/
 │   │   │   ├── index.ts
 │   │   │   ├── parsers.ts
 │   │   │   └── types.ts
-│   │   │
 │   │   ├── tests/
 │   │   │   └── analyzer.test.ts
-│   │   │
 │   │   ├── package.json
 │   │   ├── tsconfig.json
 │   │   └── README.md
@@ -118,10 +104,8 @@ hf-vram-estimator/
 │       │   ├── quantization.ts
 │       │   ├── recommend.ts
 │       │   └── types.ts
-│       │
 │       ├── tests/
 │       │   └── calculator.test.ts
-│       │
 │       ├── package.json
 │       ├── tsconfig.json
 │       └── README.md
@@ -129,3 +113,4 @@ hf-vram-estimator/
 ├── .gitignore
 ├── package.json
 └── README.md
+```
