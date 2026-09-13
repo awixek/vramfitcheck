@@ -1,0 +1,9 @@
+{
+  "name": "@hf-vram/hf-analyzer",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {"test":"node --experimental-strip-types --test tests/*.test.ts","typecheck":"tsc --noEmit"},
+  "dependencies": {"@hf-vram/vram-engine":"workspace:*"}
+}
