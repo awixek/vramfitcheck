@@ -1,0 +1,43 @@
+.vram-fit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 0 10px;
+  padding: 4px 9px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font: 600 12px/1.2 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: help;
+  box-sizing: border-box;
+}
+.vram-fit-badge[data-status="fits"] { color: #16794b; background: #ecfdf3; }
+.vram-fit-badge[data-status="quantized"] { color: #946200; background: #fff8e1; }
+.vram-fit-badge[data-status="oom"] { color: #b42318; background: #fff1f0; }
+.vram-fit-badge[data-status="unknown"] { color: #667085; background: #f2f4f7; }
+
+.hf-vram-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+  padding: 8px 10px;
+  border: 1px solid #d0d5dd;
+  border-radius: 10px;
+  background: #fff;
+  color: #344054;
+  font: 600 13px/1.2 system-ui, sans-serif;
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  z-index: 2;
+}
+.hf-vram-filter button {
+  border: 1px solid #98a2b3;
+  border-radius: 8px;
+  padding: 5px 9px;
+  background: #fff;
+  color: inherit;
+  cursor: pointer;
+}
+.hf-vram-filter button[aria-pressed="true"] { background: #f2f4f7; }
+.hf-vram-hidden { opacity: .35; }
