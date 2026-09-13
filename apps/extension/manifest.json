@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "HF VRAM Checker",
+  "short_name": "HF VRAM",
+  "version": "1.0.0",
+  "description": "Estimate Hugging Face model VRAM requirements against your configured GPU memory.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://huggingface.co/*",
+    "http://localhost:8080/*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "HF VRAM Checker"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://huggingface.co/*"
+      ],
+      "js": [
+        "scripts/calculator.js",
+        "scripts/hf_api.js",
+        "scripts/content.js"
+      ],
+      "css": [
+        "scripts/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
