@@ -1,1 +1,20 @@
-
+{
+  "name": "hf-vram",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/*", "services/*", "apps/*"],
+  "scripts": {
+    "dev:api": "tsx services/api/src/server.ts",
+    "build:api": "tsc -p services/api/tsconfig.json",
+    "test:engine": "node --experimental-strip-types --test packages/vram-engine/tests/*.test.ts",
+    "test:analyzer": "node --experimental-strip-types --test packages/hf-analyzer/tests/*.test.ts",
+    "test:gpu": "node --experimental-strip-types --test packages/gpu-data/tests/*.test.ts",
+    "test:api-gpus": "tsx --test services/api/tests/gpus.test.ts",
+    "test": "npm run test:engine && npm run test:analyzer && npm run test:gpu && npm run test:api-gpus"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.3"
+  }
+}
