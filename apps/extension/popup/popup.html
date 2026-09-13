@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HF VRAM Checker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="icon">⚡</div>
+      <div>
+        <h1>HF VRAM Checker</h1>
+        <p>Estimate model fit before loading.</p>
+      </div>
+    </header>
+
+    <label for="gpu">GPU preset</label>
+    <select id="gpu">
+      <option value="RTX 3060 12GB" data-vram="12">RTX 3060 — 12 GB</option>
+      <option value="RTX 4070 12GB" data-vram="12">RTX 4070 — 12 GB</option>
+      <option value="RTX 4090 24GB" data-vram="24">RTX 4090 — 24 GB</option>
+      <option value="RTX 5090 32GB" data-vram="32">RTX 5090 — 32 GB</option>
+      <option value="Apple Silicon 16GB" data-vram="16">Apple Silicon — 16 GB</option>
+      <option value="Apple Silicon 24GB" data-vram="24">Apple Silicon — 24 GB</option>
+      <option value="Custom GPU" data-vram="">Custom</option>
+    </select>
+
+    <label for="vram">VRAM / Unified Memory (GB)</label>
+    <input id="vram" type="number" min="1" max="512" step="0.5" inputmode="decimal" placeholder="12">
+
+    <label for="kv">KV cache allowance (GB)</label>
+    <input id="kv" type="number" min="0" max="16" step="0.5" value="1.5">
+
+    <label class="switch">
+      <input id="enabled" type="checkbox" checked>
+      <span>Enable on Hugging Face</span>
+    </label>
+
+    <button id="save">Save settings</button>
+    <div id="status" role="status" aria-live="polite"></div>
+
+    <p class="note">Estimates are approximate. Actual VRAM depends on runtime, context length, batch size, architecture and other allocations.</p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
