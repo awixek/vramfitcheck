@@ -1,0 +1,7 @@
+"use client";
+import Link from "next/link"; import {useEffect,useState} from "react";
+const API=process.env.NEXT_PUBLIC_API_BASE_URL??"http://localhost:8080";
+export function GPUProfile({id}:{id:string}){const [gpu,setGpu]=useState<any>();const [error,setError]=useState("");
+ useEffect(()=>{fetch(`${API}/v1/gpus?id=${encodeURIComponent(id)}`).then(async r=>{const j=await r.json();if(!r.ok)throw Error(j.error??"GPU not found");setGpu(j.gpu)}).catch(e=>setError(e instanceof Error?e.message:"Unable to load GPU"))},[id]);
+ return <main><nav className="nav"><Link href="/" className="brand">HF-VRAM</Link><div className="links"><Link href="/">Analyzer</Link></div></nav><section className="detail">{error?<div className="panel error">{error}</div>:gpu?<><div className="eyebrow">GPU PROFILE</div><h1>{gpu.name}</h1><p className="sub">{gpu.vendor} · {gpu.architecture??"Architecture unavailable"}</p><div className="gpuGrid"><Fact k="VRAM" v={`${gpu.vramGB} GB`}/><Fact k="Memory" v={gpu.memoryType??"Unknown"}/><Fact k="Bandwidth" v={gpu.bandwidthGBs?`${gpu.bandwidthGBs} GB/s`:"Unknown"}/><Fact k="Generation" v={gpu.generation??"Unknown"}/></div><div className="panel"><h2>About this profile</h2><p>{gpu.notes??"GPU specification profile for VRAM compatibility calculations."}</p><Link href={`/model/meta-llama/Llama-3.1-8B-Instruct`}>Test a model on this GPU →</Link></div></>:<div className="panel">Loading GPU profile…</div>}</section></main>}
+function Fact({k,v}:{k:string,v:string}){return <div className="gpuFact"><span>{k}</span><b>{v}</b></div>}
