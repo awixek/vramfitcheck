@@ -1,0 +1,16 @@
+{
+  "name": "@hf-vram/api",
+  "version": "0.1.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "start": "tsx src/server.ts"
+  },
+  "dependencies": {
+    "@hf-vram/gpu-data": "workspace:*",
+    "@hf-vram/hf-analyzer": "workspace:*",
+    "@hf-vram/vram-engine": "workspace:*",
+    "tsx": "^4.19.0"
+  }
+}
