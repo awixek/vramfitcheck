@@ -1,4 +1,4 @@
-(() => {
+(( => {
   'use strict';
 
   const BITS_PER_WEIGHT = Object.freeze({
