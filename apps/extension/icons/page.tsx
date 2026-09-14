@@ -1,2 +1,2 @@
-export import Link from "next/link";
+expoimport Link from "next/link";
 export default function Home(){return <main><nav className="nav"><Link href="/" className="brand">HF-VRAM</Link><div className="links"><Link href="/">Analyzer</Link><Link href="/gpu/rtx-4090">GPU Profiles</Link></div></nav><section className="home"><div className="eyebrow">HF-VRAM</div><h1>Model & GPU intelligence.</h1><p>Use a model URL or open a GPU profile to inspect VRAM compatibility.</p><div className="quick"><Link href="/model/meta-llama/Llama-3.1-8B-Instruct">Open sample model analysis →</Link><Link href="/gpu/rtx-4090">Open RTX 4090 profile →</Link></div></section></main>}
